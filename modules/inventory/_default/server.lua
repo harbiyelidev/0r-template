@@ -9,7 +9,6 @@ Inventory = Inventory or {}
 ---@param metadata table
 ---@return boolean
 Inventory.AddItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "add", item = item, count = count, slot = slot, metadata = metadata})
     return Framework.AddItem(src, item, count, slot, metadata)
 end
 
@@ -22,7 +21,6 @@ end
 ---@return boolean
 Inventory.RemoveItem = function(src, item, count, slot, metadata)
     item = type(item) == "table" and item.name or item
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "remove", item = item, count = count, slot = slot, metadata = metadata})
     return Framework.RemoveItem(src, item, count, slot, metadata)
 end
 
@@ -82,7 +80,7 @@ end
 ---@param coords table
 ---@return nil
 Inventory.OpenStash = function(src, id, label, slots, weight, owner, groups, coords)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A Stash Feature.")
+    return false
 end
 
 ---This will register a stash
@@ -95,7 +93,7 @@ end
 ---@param coords table
 ---@return boolean
 Inventory.RegisterStash = function(id, label, slots, weight, owner, groups, coords)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A Stash Feature.")
+    return false
 end
 
 ---This will return a boolean if the player has the item.
@@ -112,7 +110,7 @@ end
 ---@param count number
 ---@return boolean
 Inventory.CanCarryItem = function(src, item, count)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A CanCarryItem Feature.")
+    return false
 end
 
 ---This will update the plate to the vehicle inside the inventory. (It will also update with jg-mechanic if using it)
@@ -120,14 +118,14 @@ end
 ---@param newplate string
 ---@return boolean
 Inventory.UpdatePlate = function(oldplate, newplate)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A UpdatePlate Feature.")
+    return false
 end
 
 -- This will open the specified shop for the src passed.
 ---@param src number
 ---@param shopTitle string
 Inventory.OpenShop = function(src, shopTitle)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A OpenShop Feature.")
+    return false
 end
 
 -- This will register a shop, if it already exists it will return true.
@@ -136,10 +134,10 @@ end
 -- @param shopCoords table
 -- @param shopGroups table
 Inventory.CreateShop = function(shopTitle, shopInventory, shopCoords, shopGroups)
-    return false, Prints.Error("This Inventory Has Not Been Bridged For A CreateShop Feature.")
+    return false
 end
 
----This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to community_bridge logo (useful for menus)
+---This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to 0r-template logo (useful for menus)
 ---@param item string
 ---@return string
 Inventory.GetImagePath = function(item)

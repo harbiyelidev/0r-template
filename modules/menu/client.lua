@@ -42,7 +42,7 @@ local qbMenu = {
         -- hidden = true, -- optional, hides the button completely
         params = {
             -- isServer = false, -- optional, specify event type
-            event = 'community_bridge:client:TestEvent',
+            event = '0r-template:client:TestEvent',
             args = {
                 number = 1,
             }
@@ -53,7 +53,7 @@ local qbMenu = {
         txt = 'Open a secondary menu!',
         icon = 'fas fa-code-pull-request',
         params = {
-            event = 'community_bridge:client:TestEvent',
+            event = '0r-template:client:TestEvent',
             args = {
                 number = 2,
             }
@@ -106,7 +106,7 @@ RegisterCommand("testmenu-qbtoqb", function()
     Menu.Open(qbMenu, true)
 end)
 
-RegisterNetEvent('community_bridge:client:TestEvent', function(args)
+RegisterNetEvent('0r-template:client:TestEvent', function(args)
     print("Test Event", json.encode(args))
 end)
 

@@ -15,7 +15,7 @@ Phone.SendEmail = function(email, title, message)
     return true, TriggerServerEvent('qs-smartphone:server:sendNewMail', { sender = email, subject = title, message = message, button = {} })
 end
 
-RegisterNetEvent('community_bridge:Server:genericEmail', function(data)
+RegisterNetEvent('0r-template:server:genericEmail', function(data)
     TriggerServerEvent('qs-smartphone:server:sendNewMail', { sender = data.email, subject = data.title, message = data.message, button = {} })
 end)
 

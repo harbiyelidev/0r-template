@@ -4,7 +4,7 @@ Dispatch = Dispatch or {}
 ---@param data table The data to send to the dispatch system.
 ---@return nil
 Dispatch.SendAlert = function(data)
-    TriggerServerEvent('community_bridge:Server:DispatchAlert', {
+    TriggerServerEvent('0r-template:server:dispatchAlert', {
         sprite = data.blipData.sprite or 161,
         color = data.blipData.color or 1,
         scale = data.blipData.scale or 0.8,
@@ -21,7 +21,7 @@ Dispatch.SendAlert = function(data)
     })
 end
 
-RegisterNetEvent('community_bridge:Client:DispatchAlert', function(alert)
+RegisterNetEvent('0r-template:client:dispatchAlert', function(alert)
     Notify.SendNotify(alert.message, "success", 15000)
     local blip = Bridge.Utility.CreateBlip(alert.coords, alert.sprite, alert.color, alert.scale, alert.code, true)
 	Wait(alert.time)

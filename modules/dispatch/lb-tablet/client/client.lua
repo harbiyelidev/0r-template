@@ -36,7 +36,7 @@ Dispatch.SendAlert = function(data)
         time = data.time or 10000,
         job = data.jobs,
     }
-    TriggerServerEvent("community_bridge:server:dispatch:sendAlert", alertData)
+    TriggerServerEvent("0r-template:server:dispatch:sendAlert", alertData)
 end
 
 return Dispatch

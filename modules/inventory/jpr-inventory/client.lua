@@ -37,7 +37,7 @@ Inventory.GetImagePath = function(item)
     return imagePath or "https://avatars.githubusercontent.com/u/47620135"
 end
 
-RegisterNetEvent('community_bridge:client:jpr-inventory:openStash', function(id, data)
+RegisterNetEvent('0r-template:client:jpr-inventory:openStash', function(id, data)
     if source ~= 65535 then return end
     TriggerEvent("inventory:client:SetCurrentStash", id)
     TriggerServerEvent('inventory:server:OpenInventory', 'stash', id, { maxweight = data.weight, slots = data.slots })

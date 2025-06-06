@@ -19,7 +19,7 @@ end
 ---This will return a table of all the jobs in the framework.
 ---@return table
 Framework.GetFrameworkJobs = function()
-    local jobs = lib.callback.await('community_bridge:Callback:GetFrameworkJobs', false)
+    local jobs = lib.callback.await('0r-template:callback:getFrameworkJobs', false)
     return jobs
 end
 
@@ -119,15 +119,15 @@ end
 
 RegisterNetEvent('esx:playerLoaded', function(xPlayer)
     Wait(1500)
-    TriggerEvent('community_bridge:Client:OnPlayerLoaded')
+    TriggerEvent('0r-template:client:onPlayerLoaded')
 end)
 
 RegisterNetEvent('esx:onPlayerLogout', function()
-    TriggerEvent('community_bridge:Client:OnPlayerUnload')
+    TriggerEvent('0r-template:client:onPlayerUnload')
 end)
 
 RegisterNetEvent('esx:setJob', function(data)
-    TriggerEvent('community_bridge:Client:OnPlayerJobUpdate', data.name, data.label, data.grade_label, data.grade)
+    TriggerEvent('0r-template:client:onPlayerJobUpdate', data.name, data.label, data.grade_label, data.grade)
 end)
 
 return Framework

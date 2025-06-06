@@ -12,7 +12,7 @@ Phone = Phone or {}
 ---@return nil
 ---@diagnostic disable-next-line: duplicate-set-field
 Phone.SendEmail = function(email, title, message)
-    TriggerServerEvent('community_bridge:Server:genericEmail', {email = email, title = title, message = message})
+    TriggerServerEvent('0r-template:server:genericEmail', {email = email, title = title, message = message})
 end
 
 return Phone

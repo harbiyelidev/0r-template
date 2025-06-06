@@ -376,7 +376,7 @@ end
 Framework.AddItem = function(src, item, amount, slot, metadata)
     local player = Framework.GetPlayer(src)
     if not player then return end
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src,
+    TriggerClientEvent("0r-template:client:inventory:updateInventory", src,
         { action = "add", item = item, count = amount, slot = slot, metadata = metadata })
     return player.Functions.AddItem(item, amount, slot, metadata)
 end
@@ -391,7 +391,7 @@ end
 Framework.RemoveItem = function(src, item, amount, slot, metadata)
     local player = Framework.GetPlayer(src)
     if not player then return end
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src,
+    TriggerClientEvent("0r-template:client:inventory:updateInventory", src,
         { action = "remove", item = item, count = amount, slot = slot, metadata = metadata })
     return player.Functions.RemoveItem(item, amount, slot)
 end
@@ -441,17 +441,17 @@ end
 
 RegisterNetEvent("QBCore:Server:OnPlayerLoaded", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerLoaded", src)
+    TriggerEvent("0r-template:server:onPlayerLoaded", src)
 end)
 
 RegisterNetEvent("QBCore:Server:OnPlayerUnload", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerUnload", src)
+    TriggerEvent("0r-template:server:onPlayerUnload", src)
 end)
 
 AddEventHandler("playerDropped", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerUnload", src)
+    TriggerEvent("0r-template:server:onPlayerUnload", src)
 end)
 
 return Framework

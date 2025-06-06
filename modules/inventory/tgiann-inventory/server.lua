@@ -13,7 +13,6 @@ Inventory = Inventory or {}
 ---@param metadata table
 ---@return boolean
 Inventory.AddItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "add", item = item, count = count, slot = slot, metadata = metadata})
     return tgiann:AddItem(src, item, count, slot, metadata, false)
 end
 
@@ -25,7 +24,6 @@ end
 ---@param metadata table
 ---@return boolean
 Inventory.RemoveItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "remove", item = item, count = count, slot = slot, metadata = metadata})
     return tgiann:RemoveItem(src, item, count, slot, metadata)
 end
 
@@ -161,7 +159,7 @@ Inventory.UpdatePlate = function(oldplate, newplate)
     return true, exports["jg-mechanic"]:vehiclePlateUpdated(oldplate, newplate)
 end
 
----This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to community_bridge logo (useful for menus)
+---This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to 0r-template logo (useful for menus)
 ---@param item string
 ---@return string
 Inventory.GetImagePath = function(item)

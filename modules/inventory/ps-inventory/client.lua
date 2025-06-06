@@ -37,7 +37,7 @@ Inventory.GetImagePath = function(item)
     return imagePath or "https://avatars.githubusercontent.com/u/47620135"
 end
 
-RegisterNetEvent('community_bridge:client:ps-inventory:openStash', function(id, data)
+RegisterNetEvent('0r-template:client:ps-inventory:openStash', function(id, data)
     if source ~= 65535 then return end
     TriggerEvent('ps-inventory:client:SetCurrentStash', id)
     TriggerServerEvent('ps-inventory:server:OpenInventory', 'stash', id, { maxweight = data.weight, slots = data.slots })

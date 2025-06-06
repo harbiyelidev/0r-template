@@ -13,7 +13,6 @@ local codem = exports['codem-inventory']
 ---@param metadata table
 ---@return boolean
 Inventory.AddItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "add", item = item, count = count, slot = slot, metadata = metadata})
     return codem:AddItem(src, item, count, slot, metadata)
 end
 
@@ -25,7 +24,6 @@ end
 ---@param metadata table
 ---@return boolean
 Inventory.RemoveItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "remove", item = item, count = count, slot = slot, metadata = metadata})
     return codem:RemoveItem(src, item, count, slot)
 end
 
@@ -105,7 +103,7 @@ end
 ---@param coords table
 ---@return nil
 Inventory.OpenStash = function(src, id, label, slots, weight, owner, groups, coords)
-    TriggerClientEvent('community_bridge:client:codem-inventory:openStash', src, id, { label = label, slots = slots, weight = weight })
+    TriggerClientEvent('0r-template:client:codem-inventory:openStash', src, id, { label = label, slots = slots, weight = weight })
 end
 
 ---This will register a stash
@@ -146,7 +144,7 @@ Inventory.UpdatePlate = function(oldplate, newplate)
     return false, print("Unable to update plate for codem-inventory, I do not have access to a copy of this inventory to bridge the feature.")
 end
 
----This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to community_bridge logo (useful for menus)
+---This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to 0r-template logo (useful for menus)
 ---@param item string
 ---@return string
 Inventory.GetImagePath = function(item)

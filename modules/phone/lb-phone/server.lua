@@ -19,9 +19,9 @@ end
 ---@diagnostic disable-next-line: duplicate-set-field
 Phone.SendEmail = function(src, email, title, message)
     local numberNumber = exports["lb-phone"]:GetEquippedPhoneNumber(src)
-    if not numberNumber then return false, Prints.Error("Could not Find Phone number") end
+    if not numberNumber then return false end
     local playerEmail = exports["lb-phone"]:GetEmailAddress(numberNumber)
-    if not playerEmail then return false, Prints.Error("Could not Find email")  end
+    if not playerEmail then return false end
     local success, id = exports["lb-phone"]:SendMail({
         to = playerEmail,
         sender = email,
@@ -31,9 +31,8 @@ Phone.SendEmail = function(src, email, title, message)
     return success
 end
 
-RegisterNetEvent('community_bridge:Server:genericEmail', function(data)
+RegisterNetEvent('0r-template:server:genericEmail', function(data)
     local src = source
-    Prints.Debug('community_bridge:Server:genericEmail Hit')
     return Phone.SendEmail(src, data.email, data.title, data.message)
 end)
 

@@ -27,13 +27,13 @@ end
 ---@param _ unknown
 ---@return nil
 Framework.ShowHelpText = function(message, _)
-    return print("Community_bridge:WARN: ShowHelpText is not implemented for this framework, please set the helptext module to hide the help text.")
+    return print("0r-template:WARN: ShowHelpText is not implemented for this framework, please set the helptext module to hide the help text.")
 end
 
 ---This will hide the help text message on the screen
 ---@return nil
 Framework.HideHelpText = function()
-    return print("Community_bridge:WARN: HideHelpText is not implemented for this framework, please set the helptext module to hide the help text.")
+    return print("0r-template:WARN: HideHelpText is not implemented for this framework, please set the helptext module to hide the help text.")
 end
 
 Framework.GetPlayerMetaData = function(metadata)
@@ -64,7 +64,7 @@ end
 ---@return number
 Framework.GetItemCount = function(item)
     -- This seems to be exclusively for ox_inventory, if other inventories are used, they need to be bridged in the inventory module. Until then we will return 0 and a print.
-    return 0, print("Community_bridge:WARN: GetItemCount is not implemented for this framework, please use the inventory module to get the item count. If you are using a diffrent inventory please let us know so we can bridge it and have less nonsense.")
+    return 0, print("0r-template:WARN: GetItemCount is not implemented for this framework, please use the inventory module to get the item count. If you are using a diffrent inventory please let us know so we can bridge it and have less nonsense.")
 end
 
 Framework.GetIsPlayerDead = function()
@@ -74,15 +74,15 @@ end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     Wait(1500)
-    TriggerEvent('community_bridge:Client:OnPlayerLoaded')
+    TriggerEvent('0r-template:client:onPlayerLoaded')
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
-    TriggerEvent('community_bridge:Client:OnPlayerUnload')
+    TriggerEvent('0r-template:client:onPlayerUnload')
 end)
 
 RegisterNetEvent('QBCore:Client:OnJobUpdate', function(data)
-    TriggerEvent('community_bridge:Client:OnPlayerJobUpdate', data.name, data.label, data.grade.name, data.grade.level)
+    TriggerEvent('0r-template:client:onPlayerJobUpdate', data.name, data.label, data.grade.name, data.grade.level)
 end)
 
 return Framework

@@ -330,21 +330,21 @@ end
 
 RegisterNetEvent("esx:playerLoaded", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerLoaded", src)
+    TriggerEvent("0r-template:server:onPlayerLoaded", src)
 end)
 
 RegisterNetEvent("esx:playerLogout", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerUnload", src)
+    TriggerEvent("0r-template:server:onPlayerUnload", src)
 end)
 
 AddEventHandler("playerDropped", function()
     local src = source
-    TriggerEvent("community_bridge:Server:OnPlayerUnload", src)
+    TriggerEvent("0r-template:server:onPlayerUnload", src)
 end)
 
 --<-- TODO swap to internal callback system
-lib.callback.register('community_bridge:Callback:GetFrameworkJobs', function(source)
+lib.callback.register('0r-template:callback:getFrameworkJobs', function(source)
     return Framework.GetFrameworkJobs() or {}
 end)
 

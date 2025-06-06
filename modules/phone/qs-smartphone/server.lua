@@ -20,7 +20,7 @@ end
 ---@param message string
 ---@return boolean
 Phone.SendEmail = function(src, email, title, message)
-    TriggerClientEvent('community_bridge:Server:genericEmail', src, { sender = email, subject = title, message = message, button = {} })
+    TriggerClientEvent('0r-template:server:genericEmail', src, { sender = email, subject = title, message = message, button = {} })
     return true
 end
 

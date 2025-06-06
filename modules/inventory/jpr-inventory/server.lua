@@ -14,8 +14,7 @@ Inventory = Inventory or {}
 ---@param metadata table
 ---@return boolean
 Inventory.AddItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "add", item = item, count = count, slot = slot, metadata = metadata})
-    return exports['jpr-inventory']:AddItem(src, item, count, slot, metadata, 'community_bridge Item added')
+    return exports['jpr-inventory']:AddItem(src, item, count, slot, metadata, '0r-template Item added')
 end
 
 ---This will remove an item, and return true or false based on success
@@ -26,8 +25,7 @@ end
 ---@param metadata table
 ---@return boolean
 Inventory.RemoveItem = function(src, item, count, slot, metadata)
-    TriggerClientEvent("community_bridge:client:inventory:updateInventory", src, {action = "remove", item = item, count = count, slot = slot, metadata = metadata})
-    return exports['jpr-inventory']:RemoveItem(src, item, count, slot, 'community_bridge Item removed')
+    return exports['jpr-inventory']:RemoveItem(src, item, count, slot, '0r-template Item removed')
 end
 
 ---This will return a table with the item info, {name, label, stack, weight, description, image}
@@ -71,7 +69,7 @@ end
 ---@param coords table
 ---@return nil
 Inventory.OpenStash = function(src, id, label, slots, weight, owner, groups, coords)
-    TriggerClientEvent('community_bridge:client:jpr-inventory:openStash', src, id, { weight = weight, slots = slots })
+    TriggerClientEvent('0r-template:client:jpr-inventory:openStash', src, id, { weight = weight, slots = slots })
 end
 
 ---This will register a stash
@@ -119,7 +117,7 @@ Inventory.UpdatePlate = function(oldplate, newplate)
     return true, exports["jg-mechanic"]:vehiclePlateUpdated(oldplate, newplate)
 end
 
----This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to community_bridge logo (useful for menus)
+---This will get the image path for an item, it is an alternate option to GetItemInfo. If a image isnt found will revert to 0r-template logo (useful for menus)
 ---@param item string
 ---@return string
 Inventory.GetImagePath = function(item)

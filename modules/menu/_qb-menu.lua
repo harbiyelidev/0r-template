@@ -25,7 +25,7 @@ function OxToQBMenu(id, menu)
 
         if v.onSelect then
             button.params = {
-                event = "community_bridge:client:MenuCallback",
+                event = "0r-template:client:MenuCallback",
                 args = {id = id, selected = i, args = v.args, onSelect = v.onSelect},
             }
         end

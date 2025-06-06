@@ -51,7 +51,7 @@ Inventory.GetPlayerInventory = function()
     return items
 end
 
-RegisterNetEvent('community_bridge:client:codem-inventory:openStash', function(id, data)
+RegisterNetEvent('0r-template:client:codem-inventory:openStash', function(id, data)
     if source ~= 65535 then return end
     TriggerServerEvent('codem-inventory:server:openstash', id, data.slots, data.weight, data.label)
 end)
