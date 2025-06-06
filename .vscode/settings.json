@@ -1,0 +1,21 @@
+{
+    "Lua.runtime.nonstandardSymbol": ["/**/", "`", "+=", "-=", "*=", "/="],
+    "Lua.runtime.version": "Lua 5.4",
+    "Lua.diagnostics.globals": [
+        "lib",
+        "cache",
+        "locale",
+        "MySQL",
+        "QBX",
+        "qbx",
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "err-nonstandard-symbol",
+        "unknown-symbol",
+        "empty-block",
+        "missing-parameter",
+        "param-type-mismatch",
+        "redundant-return-value"
+    ],
+}

@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* @font-face {
+    font-family: "Gilroy-Bold";
+    src: url("/Gilroy-Bold.ttf") format("truetype");
+  } */
+}
+
+* {
+  user-select: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

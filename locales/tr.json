@@ -1,0 +1,8 @@
+{
+    "Web": {
+        "hello": "Merhaba, Dünya!"
+    },
+    "Lua": {
+        "hello": "Merhaba, Dünya!"
+    }
+}
