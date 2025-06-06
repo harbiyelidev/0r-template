@@ -36,7 +36,7 @@ local function FetchNui()
     end
 end
 
-RegisterNetEvent('0r-template:client:OnPlayerLoaded', function ()
+RegisterNetEvent('0r-template:client:onPlayerLoaded', function ()
     Wait(1500)
     FetchNui()
 end)
